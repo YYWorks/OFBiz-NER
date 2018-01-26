@@ -14,7 +14,7 @@ IKAnalyzer可以使用字典来对中文进行分词，并用Apache Lucene对英
 
 ### 为什么选用[Stanford CoreNLP](https://github.com/stanfordnlp/CoreNLP)
 由于我们的需求很类似这篇[eBay论文](https://aclweb.org/anthology/D/D11/D11-1144.pdf)中提到的情况。从论文的结论中我们可以看出，CRF算法最优。<br/>
-![NER算法比较](./docs/ner_algorithm_compare.png)
+![NER算法比较](./plugins/ner/docs/ner_algorithm_compare.png)
 
 斯坦福CoreNLP使用CRF算法，并且开源(GLP v3+)。
 
@@ -30,13 +30,13 @@ def jvmArguments = ['-Xms1024M', '-Xmx4096M', '-Dfile.encoding=UTF-8']
 
 ### 功能
 1. 分析语句：<br/>
-![NER Analyze Sentence](./docs/ner_main.png)
+![NER Analyze Sentence](./plugins/ner/docs/ner_main.png)
 
 2. 向字典添加新词：<br/>
-![NER Add To Dictionary](./docs/ner_addtodictionary.png)
+![NER Add To Dictionary](./plugins/ner/docs/ner_addtodictionary.png)
 
 3. 向NER添加新词：<br/>
-![NER Add ML Words](./docs/ner_addmlwords.png)
+![NER Add ML Words](./plugins/ner/docs/ner_addmlwords.png)
 
 ### 致谢
 感谢孙梦晗同学在2016年夏天做出了本模块的第一个版本，祝愿她在香港中文大学博士学习幸福快乐！
