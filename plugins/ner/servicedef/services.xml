@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to YYWorks Inc. under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+    <description>OFBiz NER Services</description>
+
+    <service name="nerParseContent" engine="java"
+            location="cn.yyworks.nlp.ner.NerServices" invoke="nerParseContent">
+        <description>Use NER parsing a content</description>
+        <attribute name="content" type="String" mode="IN" optional="false"/>
+        <attribute name="brand" type="String" mode="OUT" optional="true"/>
+        <attribute name="color" type="String" mode="OUT" optional="true"/>
+        <attribute name="stylenumber" type="String" mode="OUT" optional="true"/>
+        <attribute name="productname" type="String" mode="OUT" optional="true"/>
+        <attribute name="size" type="String" mode="OUT" optional="true"/>
+        <attribute name="types" type="String" mode="OUT" optional="true"/>
+        <attribute name="other" type="String" mode="OUT" optional="true"/>
+    </service>
+
+    <service name="nerParseSentences" engine="java"
+            location="cn.yyworks.nlp.ner.NerServices" invoke="nerParseSentences">
+        <description>Use NER parsing a content</description>
+        <attribute name="sentences" type="String" mode="INOUT" optional="false"/>
+        <attribute name="parseResults" type="List" mode="OUT" optional="true"/>
+    </service>
+
+    <service name="nerTokenizeSentences" engine="java"
+            location="cn.yyworks.nlp.ner.NerServices" invoke="nerTokenizeSentences">
+        <description>Use NER tokenizing a content</description>
+        <attribute name="sentences" type="String" mode="INOUT" optional="false"/>
+        <attribute name="tokenizedResults" type="List" mode="OUT" optional="true"/>
+    </service>
+
+    <service name="nerAddWordsToDictionary" engine="java"
+            location="cn.yyworks.nlp.ner.NerServices" invoke="nerAddWordsToDictionary">
+        <description>Add words to dictionary</description>
+        <attribute name="words" type="String" mode="IN" optional="false"/>
+        <attribute name="addWordsResults" type="List" mode="OUT" optional="true"/>
+    </service>
+
+</services>

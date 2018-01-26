@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed to YYWorks Inc. under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ofbiz.apache.org/Site-Conf" xsi:schemaLocation="http://ofbiz.apache.org/Site-Conf http://ofbiz.apache.org/dtds/site-conf.xsd">
+
+    <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
+    <include location="component://commonext/webapp/WEB-INF/controller.xml"/>
+
+    <description>Ner Module Site Configuration File</description>
+    
+    <errorpage>/error/error.jsp</errorpage>
+
+    <handler name="service-multi" type="request" class="org.apache.ofbiz.webapp.event.ServiceMultiEventHandler"/>
+    <handler name="groovy" type="request" class="org.apache.ofbiz.webapp.event.GroovyEventHandler"/>
+
+    <!-- Events run from here for the first hit in a visit -->
+    <firstvisit>
+        <event name="autoLoginCheck" type="java" path="org.apache.ofbiz.webapp.control.LoginWorker" invoke="autoLoginCheck"/>
+    </firstvisit>
+    
+    <!-- Events to run on every request before security (chains exempt) -->
+    <preprocessor>
+    </preprocessor>
+
+    <!-- Request Mappings -->
+    <request-map uri="main">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="main"/>
+    </request-map>
+    
+    <request-map uri="parseSentences">
+        <security https="true" auth="false"/>
+        <event type="service" invoke="nerParseSentences"/>
+        <response name="success" type="view" value="main"/>
+    </request-map>
+
+    <request-map uri="addDictWords">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="addDictWords"/>
+    </request-map>
+
+    <request-map uri="tokenizeSentences">
+        <security https="true" auth="false"/>
+        <event type="service" invoke="nerTokenizeSentences"/>
+        <response name="success" type="view" value="addDictWords"/>
+    </request-map>
+
+    <request-map uri="addToDictionary">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="nerAddWordsToDictionary"/>
+        <response name="success" type="view" value="addDictWords"/>
+    </request-map>
+
+    <request-map uri="addMLWords">
+        <security https="true" auth="true"/>
+        <event type="java" path="cn.yyworks.nlp.ner.NerEvents" invoke="addMLWords"/>
+        <response name="success" type="view" value="addMLWords"/>
+        <response name="ner_training" type="request" value="addAndTrain"/>
+    </request-map>
+
+    <request-map uri="parseSentencesML">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="nerParseSentences"/>
+        <response name="success" type="view" value="addMLWords"/>
+    </request-map>
+
+    <request-map uri="addAndTrain">
+        <security https="true" auth="true"/>
+        <event type="java" path="cn.yyworks.nlp.report.NerHtmlReport" invoke="checkButton" />
+        <response name="success" type="view" value="addAndTraining"/>
+        <response name="ok" type="request" value="addMLWords"/>
+    </request-map>
+
+    <!-- end of request mappings -->
+
+    <!-- View Mappings -->
+    <view-map name="main" type="screen" page="component://ner/widget/CommonScreens.xml#main"/>
+    <view-map name="addDictWords" type="screen" page="component://ner/widget/CommonScreens.xml#addDictWords"/>
+    <view-map name="addMLWords" type="screen" page="component://ner/widget/CommonScreens.xml#addMLWords"/>
+    <view-map name="addAndTraining" type="screen" page="component://ner/widget/CommonScreens.xml#addAndTraining"/>
+    <!-- end of view mappings -->
+</site-conf>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to YYWorks Inc. under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <property key="NerCompanyName">
+        <value xml:lang="en">Natural Entity Recognition</value>
+        <value xml:lang="zh">自然语言解析</value>
+    </property>
+    <property key="SourceSentences">
+        <value xml:lang="en">Source sentences:</value>
+        <value xml:lang="zh">源语句：</value>
+    </property>
+    <property key="ParsedResults">
+        <value xml:lang="en">Parsed results:</value>
+        <value xml:lang="zh">解析结果：</value>
+    </property>
+    <property key="SourceSentencesSample">
+        <value xml:lang="en">One sentence per line, i.e: \nKAILAS KG12165 暗橙红M 女款三合一冲锋衣\nB.bo女速干T恤</value>
+        <value xml:lang="zh">每行一句需要解析的语句，如：\nKAILAS KG12165 暗橙红M 女款三合一冲锋衣\nB.bo女速干T恤</value>
+    </property>
+    <property key="BrandColumn">
+        <value xml:lang="en">Brand</value>
+        <value xml:lang="zh">品牌</value>
+    </property>
+    <property key="StyleNumberColumn">
+        <value xml:lang="en">Style Number</value>
+        <value xml:lang="zh">款号</value>
+    </property>
+    <property key="ProductNameColumn">
+        <value xml:lang="en">Product Name</value>
+        <value xml:lang="zh">品名</value>
+    </property>
+    <property key="ColorColumn">
+        <value xml:lang="en">Color</value>
+        <value xml:lang="zh">颜色</value>
+    </property>
+    <property key="SizeColumn">
+        <value xml:lang="en">Size</value>
+        <value xml:lang="zh">尺码</value>
+    </property>
+    <property key="TypeColumn">
+        <value xml:lang="en">Type</value>
+        <value xml:lang="zh">分类</value>
+    </property>
+    <property key="OtherColumn">
+        <value xml:lang="en">Other</value>
+        <value xml:lang="zh">其它</value>
+    </property>
+    <property key="NerNLP">
+        <value xml:lang="en">NLP</value>
+        <value xml:lang="zh">自然语言解析</value>
+    </property>
+    <property key="NerAddDictWords">
+        <value xml:lang="en">Add Token Words</value>
+        <value xml:lang="zh">添加分词</value>
+    </property>
+    <property key="TokenizedResults">
+        <value xml:lang="en">Tokenized results:</value>
+        <value xml:lang="zh">分词结果：</value>
+    </property>
+    <property key="PleaseLoginFirst">
+        <value xml:lang="en">To use this page, please login first.</value>
+        <value xml:lang="zh">要使用本页面，请先登录。</value>
+    </property>
+    <property key="MustHasNERPermission">
+        <value xml:lang="en">To use this page, you must have NER permission (NERMANAGE_VIEW or NERMANAGE_ADMIN).</value>
+        <value xml:lang="zh">要使用本页面，你必须有NER权限（NERMANAGE_VIEW或NERMANAGE_ADMIN）。</value>
+    </property>
+    <property key="NerAddMLWords">
+        <value xml:lang="en">Add Marchine Learning Words</value>
+        <value xml:lang="zh">添加机器学习素材</value>
+    </property>
+    <property key="SourceWords">
+        <value xml:lang="en">New Words To Dictionary:</value>
+        <value xml:lang="zh">添加到字典的新词：</value>
+    </property>
+    <property key="AddWordsToDictionary">
+        <value xml:lang="en">Add To Dictionary</value>
+        <value xml:lang="zh">添加到字典</value>
+    </property>
+
+    <property key="AddingWordsToDictionary">
+        <value xml:lang="en">Adding {0} words to dictionary ...</value>
+        <value xml:lang="zh">正在添加{0}个词汇到字典 ... </value>
+    </property>
+    <property key="WordsAddedToDictionary">
+        <value xml:lang="en">Words have been added to dictionary({0}).</value>
+        <value xml:lang="zh">已经把词汇添加到了字典({0})。</value>
+    </property>
+    <property key="FailedAddingWordsToDictionary">
+        <value xml:lang="en">Failded adding words to dictionary({0}).</value>
+        <value xml:lang="zh">把词汇添加到字典({0})时出错。</value>
+    </property>
+    <property key="WordsAddedAndWorked">
+        <value xml:lang="en">Words have been added and worked.</value>
+        <value xml:lang="zh">已经添加了词汇并生效了。</value>
+    </property>
+    <property key="TrainingWords">
+        <value xml:lang="en">New Words To Train ML:</value>
+        <value xml:lang="zh">添加到机器学习的新素材：</value>
+    </property>
+    <property key="MLAddAndTraining">
+        <value xml:lang="en">Add &amp; Train</value>
+        <value xml:lang="zh">添加并训练</value>
+    </property>
+
+    <property key="MLWordsSample">
+        <value xml:lang="en">To add a brand, write a line start with the brand name, end with charactor B and sepearate with a space, i.e:\nkailas B\n\nIn the same format, you can add color(C), style number(N), product name(P), size(S), types(G) and other(O).</value>
+        <value xml:lang="zh">要添加一个品牌，你要写一行以品牌名开始、以字母B结尾、以空格分隔，如：\nkailas B\n\n同样地，你能添加颜色(C)、款号(N)、品名(P)、尺码(S)、分类(G)和其它(O)。</value>
+    </property>
+    <property key="CannotFindTrainDataFile">
+        <value xml:lang="en">Cannot find ML train data file {0}.</value>
+        <value xml:lang="zh">无法找到机器学习的训练素材文件{0}。</value>
+    </property>
+    <property key="WordsAddedToTrainData">
+        <value xml:lang="en">Words have been added to ML train data file({0}).</value>
+        <value xml:lang="zh">已经把词汇添加到了机器学习的训练素材文件({0})。</value>
+    </property>
+    <property key="FailedAddingWordsToTrainData">
+        <value xml:lang="en">ERROR: failded adding words to ML train data file({0}).</value>
+        <value xml:lang="zh">错误：把词汇添加到机器学习训练文件({0})时出错。</value>
+    </property>
+
+    <property key="StartAddingWordsToML">
+        <value xml:lang="en">Start adding words to marchine learning ... </value>
+        <value xml:lang="zh">开始向机器学习添加词汇 ... </value>
+    </property>
+    <property key="StartMLTraining">
+        <value xml:lang="en">Start to train marchine learning ... </value>
+        <value xml:lang="zh">开始训练机器学习 ... </value>
+    </property>
+    <property key="MLTrainingCompleted">
+        <value xml:lang="en"> ... training marchine learning completed </value>
+        <value xml:lang="zh"> ... 机器学习完成训练</value>
+    </property>
+    <property key="NewClassifierWorked">
+        <value xml:lang="en">New marchine learning model works now.</value>
+        <value xml:lang="zh">启用了新版机器学习模型。</value>
+    </property>
+</resource>
